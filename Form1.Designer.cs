@@ -61,7 +61,6 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.mapControl1 = new DevExpress.XtraMap.MapControl();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
@@ -73,11 +72,22 @@
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.AddLayer = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.mapControl2 = new DevExpress.XtraMap.MapControl();
+            this.skinBarSubItem4 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinBarSubItem5 = new DevExpress.XtraBars.SkinBarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl2)).BeginInit();
             this.SuspendLayout();
             choroplethColorizer1.RangeDistribution = linearRangeDistribution1;
@@ -125,7 +135,7 @@
             this.ribbonPage1,
             this.ribbonPage2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1408, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(1408, 144);
             // 
             // chkMiniMap
             // 
@@ -317,21 +327,11 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
             this.ribbonPageGroup4});
             this.ribbonPage2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.Image")));
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "New Floor";
             this.ribbonPage2.Visible = false;
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.AllowTextClipping = false;
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Layer Tools";
             // 
             // ribbonPageGroup4
             // 
@@ -350,7 +350,7 @@
             this.mapControl1.Layers.Add(this.vectorItemsLayer3);
             this.mapControl1.Layers.Add(this.vectorItemsLayer2);
             this.mapControl1.Layers.Add(this.vectorItemsLayer4);
-            this.mapControl1.Location = new System.Drawing.Point(0, 146);
+            this.mapControl1.Location = new System.Drawing.Point(0, 144);
             miniMap1.Alignment = DevExpress.XtraMap.MiniMapAlignment.BottomRight;
             miniMap1.Behavior = dynamicMiniMapBehavior1;
             miniMap1.Height = 250;
@@ -360,7 +360,7 @@
             this.mapControl1.MinZoomLevel = 18D;
             this.mapControl1.Name = "mapControl1";
             this.mapControl1.SelectionMode = DevExpress.XtraMap.ElementSelectionMode.Single;
-            this.mapControl1.Size = new System.Drawing.Size(1408, 580);
+            this.mapControl1.Size = new System.Drawing.Size(1408, 582);
             this.mapControl1.TabIndex = 0;
             this.mapControl1.ToolTipController = this.toolTipController1;
             this.mapControl1.ZoomLevel = 19D;
@@ -409,25 +409,118 @@
             // 
             this.splitContainerControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 146);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 144);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.splitContainerControl1.Panel1.Controls.Add(this.standaloneBarDockControl1);
+            this.splitContainerControl1.Panel1.MinSize = 48;
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.mapControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1408, 580);
-            this.splitContainerControl1.SplitterPosition = 717;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1408, 582);
+            this.splitContainerControl1.SplitterPosition = 694;
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
             this.splitContainerControl1.Visible = false;
+            // 
+            // standaloneBarDockControl1
+            // 
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(1, 2);
+            this.standaloneBarDockControl1.Manager = this.barManager1;
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(690, 49);
+            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.DockControls.Add(this.standaloneBarDockControl1);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.AddLayer,
+            this.skinBarSubItem4,
+            this.skinBarSubItem5});
+            this.barManager1.MaxItemId = 8;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "LayerToolBar";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar1.FloatLocation = new System.Drawing.Point(37, 296);
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.AddLayer)});
+            this.bar1.OptionsBar.AllowQuickCustomization = false;
+            this.bar1.OptionsBar.DisableClose = true;
+            this.bar1.OptionsBar.DisableCustomization = true;
+            this.bar1.OptionsBar.DrawDragBorder = false;
+            this.bar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
+            this.bar1.Text = "LayerToolBar";
+            // 
+            // AddLayer
+            // 
+            this.AddLayer.Caption = "barButtonItem11";
+            this.AddLayer.Id = 0;
+            this.AddLayer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AddLayer.ImageOptions.Image")));
+            this.AddLayer.Name = "AddLayer";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1408, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1408, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 726);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1408, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 726);
             // 
             // mapControl2
             // 
             this.mapControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mapControl2.Location = new System.Drawing.Point(0, 0);
             this.mapControl2.Name = "mapControl2";
-            this.mapControl2.Size = new System.Drawing.Size(682, 576);
+            this.mapControl2.Size = new System.Drawing.Size(705, 578);
             this.mapControl2.TabIndex = 0;
+            // 
+            // skinBarSubItem4
+            // 
+            this.skinBarSubItem4.Caption = "skinBarSubItem4";
+            this.skinBarSubItem4.Id = 6;
+            this.skinBarSubItem4.Name = "skinBarSubItem4";
+            // 
+            // skinBarSubItem5
+            // 
+            this.skinBarSubItem5.Id = 7;
+            this.skinBarSubItem5.Name = "skinBarSubItem5";
             // 
             // Form1
             // 
@@ -438,6 +531,10 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.mapControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -449,6 +546,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -485,7 +583,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
@@ -496,6 +593,16 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraMap.MapControl mapControl2;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem AddLayer;
+        protected internal DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem4;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem5;
     }
 }
 
